@@ -1,15 +1,13 @@
-# Relatório Final – Jantar dos Filósofos
+# Relatório Final – Jantar dos Filósofos #
 
-## Introdução
+## Introdução ##
 
 O problema do Jantar dos Filósofos é um clássico da computação concorrente, proposto por Edsger Dijkstra, que ilustra desafios fundamentais no controle de concorrência, como deadlock, starvation e sincronização de recursos compartilhados.  
 O problema consiste em cinco filósofos sentados ao redor de uma mesa circular, onde cada filósofo alterna entre pensar e comer. Para comer, é necessário adquirir dois recursos compartilhados (garfos), um à esquerda e outro à direita.
 
 Este trabalho analisa três soluções distintas para o problema, utilizando diferentes técnicas de sincronização em Java.
 
----
-
-## Metodologia
+## Metodologia ##
 
 Os testes foram realizados utilizando a linguagem Java, com execução contínua de cada solução por um período mínimo de 2 minutos.  
 Durante a execução, foram coletadas as seguintes métricas:
@@ -21,11 +19,9 @@ Durante a execução, foram coletadas as seguintes métricas:
 
 Cada solução utilizou o mesmo sistema de logging e coleta de estatísticas, garantindo comparabilidade entre os resultados.
 
----
+## Resultados ##
 
-## Resultados
-
-### Estatísticas de Execução (exemplo)
+### Estatísticas de Execução (exemplo) ###
 
 | Filósofo | Tarefa 1 | Tarefa 2 | Tarefa 3 | Monitor |
 |--------|----------|----------|----------|---------|
@@ -41,37 +37,37 @@ Cada solução utilizou o mesmo sistema de logging e coleta de estatísticas, ga
 
 ---
 
-## Análise
+## Análise ##
 
-### Prevenção de Deadlock
+### Prevenção de Deadlock ###
 
 - **Tarefa 1:** Não previne deadlock. O uso incorreto de `wait()` e `notify()` pode levar à perda de notificações.
 - **Tarefa 2:** Previne deadlock através da assimetria na ordem de aquisição dos recursos.
 - **Tarefa 3:** Previne deadlock limitando o número de filósofos concorrentes com semáforos.
 - **Monitor:** Previne deadlock completamente ao centralizar o controle dos recursos.
 
-### Prevenção de Starvation
+### Prevenção de Starvation ###
 
 - **Tarefa 1:** Starvation possível e frequente.
 - **Tarefa 2:** Ainda existe possibilidade de starvation.
 - **Tarefa 3:** Starvation reduzida, mas não totalmente eliminada.
 - **Monitor:** Starvation evitada por meio de mecanismo de fairness (fila).
 
-### Performance / Throughput
+### Performance / Throughput ###
 
 - **Tarefa 1:** Baixo throughput devido a bloqueios.
 - **Tarefa 2:** Melhor desempenho, porém desigual.
 - **Tarefa 3:** Alto throughput e bom balanceamento.
 - **Monitor:** Desempenho estável, porém com maior custo de sincronização.
 
-### Complexidade de Implementação
+### Complexidade de Implementação ###
 
 - **Tarefa 1:** Baixa, porém conceitualmente incorreta.
 - **Tarefa 2:** Simples e fácil de entender.
 - **Tarefa 3:** Média, exige entendimento de semáforos.
 - **Monitor:** Alta, requer controle centralizado e lógica de fairness.
 
-### Uso de Recursos
+### Uso de Recursos ###
 
 - **Tarefa 1:** Ineficiente.
 - **Tarefa 2:** Uso moderado.
@@ -80,7 +76,7 @@ Cada solução utilizou o mesmo sistema de logging e coleta de estatísticas, ga
 
 ---
 
-## Conclusão
+## Conclusão ##
 
 Cada solução é adequada para diferentes cenários:
 
