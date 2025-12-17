@@ -1,16 +1,19 @@
+package tarefa4;
+
 import java.util.Random;
 
 /**
- * Filósofo que interage com a Mesa (monitor).
- * Não acessa garfos diretamente.
+ * Representa um filósofo que interage com a Mesa (monitor).
+ * O filósofo não controla os garfos diretamente, apenas
+ * solicita acesso ao monitor.
  */
 public class Filosofo implements Runnable {
 
     private final int id;
     private final String nome;
     private final Mesa mesa;
-
     private final Random random = new Random();
+
     private int refeicoes = 0;
 
     public Filosofo(int id, String nome, Mesa mesa) {
@@ -27,6 +30,7 @@ public class Filosofo implements Runnable {
                 comer();
             }
         } catch (InterruptedException e) {
+            // Encerramento gracioso
             Thread.currentThread().interrupt();
         }
     }

@@ -1,3 +1,4 @@
+package tarefa3;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 
@@ -11,7 +12,6 @@ import java.util.concurrent.Semaphore;
  */
 public class Filosofo implements Runnable {
 
-    private final int id;
     private final String nome;
 
     // Semáforo global que limita o número de filósofos concorrendo
@@ -28,7 +28,6 @@ public class Filosofo implements Runnable {
                     Semaphore semaforoSala,
                     Semaphore garfoEsquerdo,
                     Semaphore garfoDireito) {
-        this.id = id;
         this.nome = nome;
         this.semaforoSala = semaforoSala;
         this.garfoEsquerdo = garfoEsquerdo;

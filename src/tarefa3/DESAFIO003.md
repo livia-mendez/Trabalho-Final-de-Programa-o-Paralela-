@@ -2,7 +2,7 @@
 
 Solução com Semáforos
 
-Implementar uma soluçãoo usando semáforos para limitar o número de filósofos que podem
+Implementar uma solução usando semáforos para limitar o número de filósofos que podem
 tentar pegar os garfos simultaneamente.
 
 1. Implemente uma nova solução usando Semaphore do Java.
